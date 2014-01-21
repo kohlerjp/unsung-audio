@@ -1,0 +1,32 @@
+<div class="container">
+	<h1>
+		<%= gravatar_for(@artist) %>
+		<%=@artist.name  %>
+	</h1>
+	<% profile = @artist.profile %>
+	<% if profile %>
+	<h2>Profile</h2>
+	<div class="row">
+		<div class=".col-md-4">
+			<ul class="profile-attributes">
+				<li>Genre: <%= profile.genre %> </li>
+				<li>Location:<%= profile.location %> </li>
+				<li>Website: <a href="<%= profile.website %>"><%= profile.website %></a></li>
+				<% if current_artist?(@artist) %>
+					<a href="#">Update Profile</a>
+				<% end %>
+			</ul>
+		<% end %>
+	</div>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
